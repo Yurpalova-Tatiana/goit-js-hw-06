@@ -1,8 +1,16 @@
-const refs = {
- inputBtn: document.querySelector('#name-input'),
- spanOutput : document.querySelector('#name-output'),
-}
-refs.inputBtn.addEventListener('input', onInputChange);
-function onInputChange(event) {
-    refs.spanOutput.textContent = event.currentTarget.value;   
-}
+
+
+const inputElement = document.querySelector('#name-input');
+const outputElement = document.querySelector('#name-output');
+
+const inputHandle = () => {
+    if (inputElement.value.length > 0) {
+        outputElement.textContent = inputElement.value;
+        // return;
+    } else {
+        outputElement.textContent = 'Anonymous';
+    }
+
+ }
+
+inputElement.addEventListener('input', inputHandle);
